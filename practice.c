@@ -1,102 +1,23 @@
-/*
-#include<stdio.h>
-int main(){
-    int i,n;
-    printf("enter the number of elements:");
-    scanf("%d",&n);
-    int elements[n];
-    printf("the elements are: ");
-    for(i=0;i<n;i++){
-        scanf("%d",&elements[i]);
-    }
-    int j;
-    int temp;
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(elements[i]<elements[j]){
-                temp=elements[i];
-                elements[i]=elements[j];
-                elements[j]=temp;
-
-            }
+#include <stdio.h>
+int main()
+{
+    int i;
+    int ar[9] = {2, 6, 2, 0, 1, 3, 5, 1, 2};
+    int flag = 0;
+    int key;
+    int count = 0;
+    printf("enter number you wanna search: ");
+    scanf("%d", &key);
+    for (i = 0; i < 9; i++)
+    {
+        if (ar[i] == key){
+            flag = 1;
+        count++;
         }
     }
-    printf("ascending order: ");
-    for(i=0;i<n;i++){
-        printf("%d ", elements[i]);
-    }
+    if (flag == 1)
+        printf("present %d times", count);
+    else
+        printf("not prsent");
     return 0;
 }
-
-
- #include<stdio.h>
-int main(){
-    int i,n;
-    printf("enter the number of elements:");
-    scanf("%d",&n);
-    int elements[n];
-    printf("the elements are: ");
-    for(i=0;i<n;i++){
-        scanf("%d",&elements[i]);
-    }
-    int j;
-    int temp;
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(elements[i]>elements[j]){
-                temp=elements[i];
-                elements[i]=elements[j];
-                elements[j]=temp;
-
-            }
-        }
-    }
-    printf("descending order: ");
-    for(i=0;i<n;i++){
-        printf("%d ", elements[i]);
-    }
-    return 0;
-}
-#include<stdio.h>
-int main(){
-    int i,n;
-    printf("enter the number of elements:");
-    scanf("%d",&n);
-    int elements[n];
-    printf("the elements are: ");
-    for(i=0;i<n;i++){
-        scanf("%d",&elements[i]);
-    }
-    int largest=elements[0];
-    for(i=0;i<n;i++){
-        if(elements[i]> largest){
-            largest=elements[i];
-        }
-    }
-    printf("%d is the largest number!", largest);
-    return 0;
-}
-    */
-#include<stdio.h>
-int main(){
-    int i,n;
-    printf("enter the number of elements:");
-    scanf("%d",&n);
-    int elements[n];
-    printf("the elements are: ");
-    int largest;
-    int second;
-    largest=second=elements[0];
-    for(i=0;i<n;i++){
-        scanf("%d",&elements[i]);
-    }
-     for(i=0;i<n;i++){
-        if(elements[i]> largest){
-            second=largest;
-            largest=elements[i];
-        }
-     }
-     printf("%d is second largest number!", second);
-     return 0;
-    }
-
