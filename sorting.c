@@ -13,6 +13,7 @@ int main(){
         }
     }
 }
+printf("sorted array:");
 for(j=0;j<9;j++){
     printf("%d ", ar[j]);
 }

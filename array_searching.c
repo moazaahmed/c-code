@@ -11,17 +11,18 @@ int main(){
         scanf("%d",&elements[i]);
     }
     int key;
+    int count=0;
     printf("enter number you want to search: ");
     scanf("%d",&key);
     for(i=0;i<n;i++){
         if(elements[i]==key){
                 flag=1;
-                position=i+1;
+                count++;
 
         }
     }
     if(flag==1){
-        printf("%d is preset", position);
+        printf("%d is present %d times", key,count);
     }
     else
         printf("%d is not present", key);
