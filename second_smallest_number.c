@@ -1,3 +1,4 @@
+// wrong logic
 #include<stdio.h>
 int main(){
     int i,n;
@@ -12,7 +13,7 @@ int main(){
     int second;
     smallest=second=elements[0];
     for(i=0;i<n;i++){
-        if(elements[i]>smallest){
+        if(elements[i]< smallest){
             second=smallest;
             smallest=elements[i];
         }
@@ -25,5 +26,5 @@ int main(){
     return 0;
 }
     
-
+// wrong logic
     

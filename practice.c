@@ -56,7 +56,7 @@ int main(){
         printf("%d ", elements[i]);
     }
     return 0;
-}*/
+}
 #include<stdio.h>
 int main(){
     int i,n;
@@ -76,3 +76,27 @@ int main(){
     printf("%d is the largest number!", largest);
     return 0;
 }
+    */
+#include<stdio.h>
+int main(){
+    int i,n;
+    printf("enter the number of elements:");
+    scanf("%d",&n);
+    int elements[n];
+    printf("the elements are: ");
+    int largest;
+    int second;
+    largest=second=elements[0];
+    for(i=0;i<n;i++){
+        scanf("%d",&elements[i]);
+    }
+     for(i=0;i<n;i++){
+        if(elements[i]> largest){
+            second=largest;
+            largest=elements[i];
+        }
+     }
+     printf("%d is second largest number!", second);
+     return 0;
+    }
+
