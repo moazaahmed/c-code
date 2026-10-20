@@ -1,33 +1,23 @@
 #include<stdio.h>
 int main(){
-   int i,n;
-   printf("number of score: ");
-   scanf("%d",&n);
-   int ar[n];
-   printf("the numbers are: ");
-   for(i=0;i<n;i++){
-    scanf("%d",&ar[i]);
-   }
-   long long gained=0;
-   long long lost=0;
-   for(i=0;i<n;i++){
-    if(ar[i] > 0){
-        gained+=ar[i];
+    int i,j;
+    int m,n;
+    printf("enter numbers of rows and columns: ");
+    scanf("%d%d",&m,&n);
+    int ar1[m][n];
+    printf("matrix: ");
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            scanf("%d",&ar1[i][j]);
+        }
     }
-    else if(ar[i] < 0){
-        lost+=-ar[i];
-    }
-   }
-   printf("total gained: %lld\n", gained);
-   printf("total lost: %lld\n", lost);
-   if(gained >lost){
-    printf("gained more point!\n");
-   }
-   else if(lost==gained){
-    printf("tie!\n");
-   }
-   else{
-    printf("lost more point!");
-   }
-   return 0;
+    int sum=0;
+    printf("primary diagonal: ");
+    for(i=0;i<m && i<n;i++){
+            printf("%d ", ar1[i][i]);
+             sum+=ar1[i][i];
+
+        }
+        printf("\nsum: %d", sum);
+        return 0;
 }
