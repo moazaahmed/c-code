@@ -1,27 +1,30 @@
 #include <stdio.h>
 int main()
 {
-    int i,n,j;
-    int start;
-    int end;
-    printf("enter range: ");
-    scanf("%d%d",&start,&end);
-    for(i=start;i<=end;i++){
-        int prime=1;
-        for(j=2;j<i;j++){
-            if(i%j==0){
-                prime=0;
-                break;
-            }
+    int i,m,n,j;
+    printf("enter number of rows: ");
+    scanf("%d",&m);
+     printf("enter number of rows: ");
+    scanf("%d",&n);
+    int ar[m][n];
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            scanf("%d",&ar[i][j]);
         }
-            if(prime==1){
-                printf("%d is prime\n", i);
-            }
-            else
-            printf("%d is not prime\n", i);
+    }
+    for(j=0;j<n;j++){
+        int sum=0;
+        int product=1;
+        for(i=0;i<m;i++){
+            sum+=ar[i][j];
+            product*=ar[i][j];
+        }
+
+    printf("column:%d sum= %d product=%d\n", j+1, sum, product);
     }
     return 0;
 }
+
 
 
 
