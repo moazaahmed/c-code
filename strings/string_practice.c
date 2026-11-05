@@ -1,23 +1,30 @@
 #include <stdio.h>
 int main()
 {
-    char str[100] = {0};
-    printf("enter string: ");
-    fgets(str, sizeof(str), stdin);
+    char str1[1000];
+    char str2[1000];
+    printf("enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+     printf("enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+    int i,j;
     int len=0;
-    int vowel_count=0;
-    int consonant_count=0;
-    int i;
-    while(str[len]!='\0' && str[len]!='\n'){
-    if(str[len]=='a'||str[len]=='e'||str[len]=='i'||str[len]=='o'||str[len]=='u'){
-        vowel_count++;
+    for(i=0;str1[i]!='\n' && str1[i]!='\n';i++){
+        len++;
     }
-    else if((str[len]!='a'||str[len]!='e'||str[len]!='i'||str[len]!='o'||str[len]!='u')&&(str[len]>='a' && str[len]<='z')){
-         consonant_count++;
+    for(j=0;str2[j]!='\n' && str2[j]!='\n';j++){
+        if(str2[j]=='u'||str2[j]=='i'){
+            str2[j]=str2[j]-32;//for(j=len-1;str2[j]!='\n' && str2[j]!='\n';j--)
+        }
     }
-    len++;
-}
-    printf("vowel:%d", vowel_count);
-    printf("\nconsonant:%d", consonant_count);
+    for(i=len-1;i>=0;i--){
+        if(str1[i]>='a'&& str1[i]<='z'){
+            str1[i]=str1[i]-32;
+            str2[j]=str1[i];
+            j++;
+        }
+    }
+        str2[j]='\0';
+        printf("%s", str2);
     return 0;
 }
