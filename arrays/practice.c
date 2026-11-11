@@ -3,22 +3,25 @@
 int main()
 {
     int i,n;
+    int j;
     scanf("%d",&n);
     int ar[n];
-    int palindrome=1;
+    int sorted=1;
     for(i=0;i<n;i++){
         scanf("%d",&ar[i]);
     }
-    for(i=0;i<n/2;i++){
-        if(ar[i]!=ar[n-i-1]){
-            palindrome=0;
+    for(i=0;i<n-1;i++){
+        for(j=i+1;j<n-1;j++){
+            if(ar[i]> ar[j]){
+                sorted=0;
+                break;
+            }
         }
     }
-    if(palindrome==1){
-        printf("palindrome");
-    }
+    if(sorted==1)
+    printf("sorted");
     else
-    printf("not palindrome");
+    printf("not sorted");
     return 0;
 }
 
