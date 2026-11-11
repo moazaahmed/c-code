@@ -1,30 +1,26 @@
 #include <stdio.h>
+
 int main()
 {
-    int i,m,n,j;
-    printf("enter number of rows: ");
-    scanf("%d",&m);
-     printf("enter number of rows: ");
+    int i,n;
     scanf("%d",&n);
-    int ar[m][n];
-    for(i=0;i<m;i++){
-        for(j=0;j<n;j++){
-            scanf("%d",&ar[i][j]);
+    int ar[n];
+    int palindrome=1;
+    for(i=0;i<n;i++){
+        scanf("%d",&ar[i]);
+    }
+    for(i=0;i<n/2;i++){
+        if(ar[i]!=ar[n-i-1]){
+            palindrome=0;
         }
     }
-    for(j=0;j<n;j++){
-        int sum=0;
-        int product=1;
-        for(i=0;i<m;i++){
-            sum+=ar[i][j];
-            product*=ar[i][j];
-        }
-
-    printf("column:%d sum= %d product=%d\n", j+1, sum, product);
+    if(palindrome==1){
+        printf("palindrome");
     }
+    else
+    printf("not palindrome");
     return 0;
 }
-
 
 
 
