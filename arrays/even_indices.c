@@ -9,7 +9,7 @@ int main(){
         scanf("%d",&ar[i]);
     }
     int even_indices_sum=0;
-    for(i=1;i<n;i+=2){
+    for(i=0;i<n;i+=2){
         even_indices_sum+=ar[i];
     }
     printf("even sum= %d", even_indices_sum);
