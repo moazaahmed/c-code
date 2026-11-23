@@ -3,7 +3,7 @@ float CalculateDiscount(float amount){
     if(amount >= 1000){
         return amount * 0.8;
     }
-    else if(amount>=500 && amount<999){
+    else if(amount>=500 && amount<1000){
         return amount * 0.9;
     }
     else
@@ -25,11 +25,11 @@ float deliveryCharge(float amount, int distance){
     }
     int main(){
         float amount;
-        float distance,discount,srvicecharge,deliverycharge;
+        float distance,discount,srvicecharge,dliverycharge;
         scanf("%f%f",&amount,&distance);
         discount=CalculateDiscount(amount);
         srvicecharge=AddServiceCharge(discount);
-        deliverycharge=(srvicecharge, distance);
+        dliverycharge=deliveryCharge(srvicecharge, distance);
         float FinalBill=deliverycharge+srvicecharge;
         printf("final bill: %.2f$", FinalBill);
     }
