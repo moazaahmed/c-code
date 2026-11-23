@@ -3,7 +3,7 @@ float CalculateDiscount(float amount){
     if(amount >= 1000){
         return amount * 0.8;
     }
-    else if(amount>=500 && amount<999){
+    else if(amount>=500 && amount<1000){
         return amount * 0.9;
     }
     else
