@@ -25,11 +25,11 @@ float deliveryCharge(float amount, int distance){
     }
     int main(){
         float amount;
-        float distance,discount,srvicecharge,deliverycharge;
+        float distance,discount,srvicecharge,dliverycharge;
         scanf("%f%f",&amount,&distance);
         discount=CalculateDiscount(amount);
         srvicecharge=AddServiceCharge(discount);
-        deliverycharge=(srvicecharge, distance);
+        dliverycharge=deliveryCharge(srvicecharge, distance);
         float FinalBill=deliverycharge+srvicecharge;
         printf("final bill: %.2f$", FinalBill);
     }
