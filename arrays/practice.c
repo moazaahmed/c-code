@@ -1,31 +1,23 @@
 #include <stdio.h>
 int main(){
-    int i,j,m,n;
-    scanf("%d%d",&m,&n);
-    int ar[m][n];
-    int *ptr=&ar[0][0];
-    for(i=0;i<m;i++){
-        for(j=0;j<n;j++){
-            scanf("%d",(*(ar+i)+j));
+    int i,n;
+    scanf("%d",&n);
+    int ar[n];
+    int *ptr=ar;
+    for(i=0;i<n;i++){
+        scanf("%d",ar+i);
+    }
+    int even=0;
+    int odd=0;
+    for(i=0;i<n;i++){
+        if(*(ar+i)%2==0){
+            even++;
         }
+        else
+        odd++;
     }
-    int k;
-    scanf("%d",&k);
-    int count=0;
-    int flag=0;
-    for(i=0;i<m;i++){
-        for(j=0;j<n;j++){
-            if(*(*(ar+i)+j)==k){
-                count++;
-                int flag=1;
-            }
-        }
-    }
-    if(count>0){
-        printf("present");
-    }
-    else
-    printf("not present");
+    printf("even count= %d\n", even);
+    printf("odd count= %d", odd);
 }
 
 
