@@ -1,30 +1,32 @@
 #include <stdio.h>
-
-int main()
-{
-    int i,n;
-    int j;
-    scanf("%d",&n);
-    int ar[n];
-    int sorted=1;
-    for(i=0;i<n;i++){
-        scanf("%d",&ar[i]);
+int main(){
+    int i,j,m,n;
+    scanf("%d%d",&m,&n);
+    int ar[m][n];
+    int *ptr=&ar[0][0];
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            scanf("%d",(*(ar+i)+j));
+        }
     }
-    for(i=0;i<n-1;i++){
-        for(j=i+1;j<n-1;j++){
-            if(ar[i]> ar[j]){
-                sorted=0;
-                break;
+    int k;
+    scanf("%d",&k);
+    int count=0;
+    int flag=0;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            if(*(*(ar+i)+j)==k){
+                count++;
+                int flag=1;
             }
         }
     }
-    if(sorted==1)
-    printf("sorted");
+    if(count>0){
+        printf("present");
+    }
     else
-    printf("not sorted");
-    return 0;
+    printf("not present");
 }
-
 
 
         
